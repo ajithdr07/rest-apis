@@ -5,14 +5,14 @@ import "dotenv/config";
 import { fileURLToPath } from "url";
 import path from "path";
 
-import appRoutes from "./routes/routes.js";
+import appRoutes from "../routes/routes.js";
 const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const filePath = path.join(__dirname, "intro.txt");
+const filePath = path.join(__dirname, "..", "intro.txt");
 
 app.get("/", (req, res) => {
-  res.sendFile(filePath);
+  res.send("Hello");
 });
 
 app.use(express.json());
